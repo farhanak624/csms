@@ -1,0 +1,528 @@
+<div>
+  <form [formGroup]="form">
+    <mat-accordion>
+      <mat-expansion-panel
+        (opened)="relationShipPanel.set(true)"
+        (closed)="relationShipPanel.set(false)"
+      >
+        <mat-expansion-panel-header class="custom-expansion-header">
+          <mat-panel-title>Relation between CP and NCP</mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="mx-auto p-4 grid grid-cols-1 md:grid-cols-3 gap-3">
+          <!-- 1. Dropdown for Relationship Status -->
+          <div class="form-group mb-4 gap-4">
+            <label
+              class="block text-sm font-medium text-muted-foreground"
+              for="relationshipStatus"
+              >Relationship Status</label
+            >
+            <select
+              id="relationshipStatus"
+              formControlName="relationshipStatus"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            >
+              <option
+                *ngFor="let status of relationshipStatusOptions"
+                [value]="status"
+              >
+                {{ status }}
+              </option>
+            </select>
+          </div>
+
+          <!-- 2. Date Married -->
+          <div class="form-group mb-4">
+            <label
+              class="block text-sm font-medium text-muted-foreground"
+              for="dateMarried"
+              >Date Married</label
+            >
+            <input
+              type="date"
+              id="dateMarried"
+              formControlName="dateMarried"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            />
+          </div>
+
+          <!-- 3. Date Separated -->
+          <div class="form-group mb-4">
+            <label
+              class="block text-sm font-medium text-muted-foreground"
+              for="dateSeparated"
+              >Date Separated</label
+            >
+            <input
+              type="date"
+              id="dateSeparated"
+              formControlName="dateSeparated"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            />
+          </div>
+
+          <!-- 4. Dropdown for Country Separated -->
+          <div class="form-group mb-4">
+            <label
+              class="block text-sm font-medium text-muted-foreground"
+              for="countrySeparated"
+              >Country Separated</label
+            >
+            <select
+              id="countrySeparated"
+              formControlName="countrySeparated"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            >
+              <option *ngFor="let country of countryOptions" [value]="country">
+                {{ country }}
+              </option>
+            </select>
+          </div>
+
+          <!-- 5. Dropdown for State Separated -->
+          <div class="form-group mb-4">
+            <label
+              class="block text-sm font-medium text-muted-foreground"
+              for="stateSeparated"
+              >State Separated</label
+            >
+            <select
+              id="stateSeparated"
+              formControlName="stateSeparated"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            >
+              <option *ngFor="let state of stateOptions" [value]="state">
+                {{ state }}
+              </option>
+            </select>
+          </div>
+
+          <!-- 6. Dropdown for County Separated -->
+          <div class="form-group mb-4">
+            <label
+              class="block text-sm font-medium text-muted-foreground"
+              for="countySeparated"
+              >County Separated</label
+            >
+            <select
+              id="countySeparated"
+              formControlName="countySeparated"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            >
+              <option *ngFor="let county of countyOptions" [value]="county">
+                {{ county }}
+              </option>
+            </select>
+          </div>
+
+          <!-- 7. Yes or No Radio Button for "Divorce proceedings by attorney/ by court action pending?" -->
+          <div class="form-group mb-4">
+            <label
+              >Divorce proceedings by attorney/ by court action pending?</label
+            >
+            <div>
+              <input
+                type="radio"
+                id="divorceProceedingsYes"
+                formControlName="divorceProceedings"
+                value="yes"
+              />
+              <label for="divorceProceedingsYes">Yes</label>
+              <input
+                type="radio"
+                id="divorceProceedingsNo"
+                formControlName="divorceProceedings"
+                value="no"
+              />
+              <label for="divorceProceedingsNo">No</label>
+            </div>
+          </div>
+
+          <!-- 8. Yes or No Radio Button for "Is child support included in this action?" -->
+          <div class="form-group mb-4">
+            <label>Is child support included in this action?</label>
+            <div>
+              <input
+                type="radio"
+                id="childSupportIncludedYes"
+                formControlName="childSupportIncluded"
+                value="yes"
+              />
+              <label for="childSupportIncludedYes">Yes</label>
+              <input
+                type="radio"
+                id="childSupportIncludedNo"
+                formControlName="childSupportIncluded"
+                value="no"
+              />
+              <label for="childSupportIncludedNo">No</label>
+            </div>
+          </div>
+        </div>
+      </mat-expansion-panel>
+      <mat-expansion-panel
+        (opened)="childInfoPanel.set(true)"
+        (closed)="childInfoPanel.set(false)"
+      >
+        <mat-expansion-panel-header class="custom-expansion-header">
+          <mat-panel-title>Child Information</mat-panel-title>
+        </mat-expansion-panel-header>
+        <div class="mx-auto p-4">
+          <div
+            *ngFor="let child of children.controls; let i = index"
+            [formGroup]="$any(child)"
+            class="grid grid-cols-1 md:grid-cols-3 gap-3"
+          >
+            <div class="form-group mb-4">
+              <label
+                class="block text-sm font-medium text-muted-foreground"
+                for="childFirstName"
+                >First Name</label
+              >
+              <input
+                type="text"
+                id="childFirstName"
+                formControlName="childFirstName"
+                class="mt-1 block w-full border border-border rounded-md p-2"
+              />
+            </div>
+            <div class="form-group mb-4">
+              <label
+                class="block text-sm font-medium text-muted-foreground"
+                for="childMiddleName"
+                >Middle Name</label
+              >
+              <input
+                type="text"
+                id="childMiddleName"
+                formControlName="childMiddleName"
+                class="mt-1 block w-full border border-border rounded-md p-2"
+              />
+            </div>
+            <div class="form-group mb-4">
+              <label
+                class="block text-sm font-medium text-muted-foreground"
+                for="childLastName"
+                >Last Name</label
+              >
+              <input
+                type="text"
+                id="childLastName"
+                formControlName="childLastName"
+                class="mt-1 block w-full border border-border rounded-md p-2"
+              />
+            </div>
+            <div class="form-group mb-4">
+              <label
+                class="block text-sm font-medium text-muted-foreground"
+                for="suffix"
+                >Suffix</label
+              >
+              <select
+                id="suffix"
+                formControlName="suffix"
+                class="mt-1 block w-full border border-border rounded-md p-2"
+              >
+                <option *ngFor="let suffix of suffixOptions" [value]="suffix">
+                  {{ suffix }}
+                </option>
+              </select>
+            </div>
+
+            <!-- 5. Race (Dropdown) -->
+            <div class="form-group mb-4">
+              <label
+                class="block text-sm font-medium text-muted-foreground"
+                for="race"
+                >Race</label
+              >
+              <select
+                id="race"
+                formControlName="race"
+                class="mt-1 block w-full border border-border rounded-md p-2"
+              >
+                <option *ngFor="let race of raceOptions" [value]="race">
+                  {{ race }}
+                </option>
+              </select>
+            </div>
+
+            <!-- 6. Relationship to Applicant (Dropdown) -->
+            <div class="form-group mb-4">
+              <label
+                for="relationshipToApplicant"
+                class="block text-sm font-medium text-muted-foreground"
+                >Relationship to Applicant</label
+              >
+              <select
+                id="relationshipToApplicant"
+                formControlName="relationshipToApplicant"
+                class="mt-1 block w-full border border-border rounded-md p-2"
+              >
+                <option
+                  *ngFor="let relationship of relationshipToApplicantOptions"
+                  [value]="relationship"
+                >
+                  {{ relationship }}
+                </option>
+              </select>
+            </div>
+
+            <!-- 7. Conception Occurred State (Dropdown) -->
+            <div class="form-group mb-4">
+              <label
+                for="conceptionOccurredState"
+                class="block text-sm font-medium text-muted-foreground"
+                >Conception Occurred State</label
+              >
+              <select
+                id="conceptionOccurredState"
+                formControlName="conceptionOccurredState"
+                class="mt-1 block w-full border border-border rounded-md p-2"
+              >
+                <option *ngFor="let state of stateOptions" [value]="state">
+                  {{ state }}
+                </option>
+              </select>
+            </div>
+
+            <!-- 8. Gender (Dropdown) -->
+            <div class="form-group mb-4">
+              <label
+                class="block text-sm font-medium text-muted-foreground"
+                for="gender"
+                >Gender</label
+              >
+              <select
+                id="gender"
+                formControlName="gender"
+                class="mt-1 block w-full border border-border rounded-md p-2"
+              >
+                <option *ngFor="let gender of genderOptions" [value]="gender">
+                  {{ gender }}
+                </option>
+              </select>
+            </div>
+
+            <!-- 9. Birth State (Dropdown) -->
+            <div class="form-group mb-4">
+              <label
+                class="block text-sm font-medium text-muted-foreground"
+                for="birthState"
+                >Birth State</label
+              >
+              <select
+                id="birthState"
+                formControlName="birthState"
+                class="mt-1 block w-full border border-border rounded-md p-2"
+              >
+                <option *ngFor="let state of stateOptions" [value]="state">
+                  {{ state }}
+                </option>
+              </select>
+            </div>
+
+            <!-- 10. Birth County (Dropdown) -->
+            <div class="form-group mb-4">
+              <label
+                class="block text-sm font-medium text-muted-foreground"
+                for="birthCounty"
+                >Birth County</label
+              >
+              <select
+                id="birthCounty"
+                formControlName="birthCounty"
+                class="mt-1 block w-full border border-border rounded-md p-2"
+              >
+                <option *ngFor="let county of countyOptions" [value]="county">
+                  {{ county }}
+                </option>
+              </select>
+            </div>
+
+            <!-- 11. Birth City -->
+            <div class="form-group mb-4">
+              <label
+                class="block text-sm font-medium text-muted-foreground"
+                for="birthCity"
+                >Birth City</label
+              >
+              <input
+                type="text"
+                id="birthCity"
+                formControlName="birthCity"
+                class="mt-1 block w-full border border-border rounded-md p-2"
+              />
+            </div>
+
+            <!-- 12. Date of Birth -->
+            <div class="form-group mb-4">
+              <label
+                class="block text-sm font-medium text-muted-foreground"
+                for="dateOfBirth"
+                >Date of Birth</label
+              >
+              <input
+                type="date"
+                id="dateOfBirth"
+                formControlName="dateOfBirth"
+                class="mt-1 block w-full border border-border rounded-md p-2"
+              />
+            </div>
+
+            <!-- Yes/No Questions -->
+
+            <!-- 1. Was mother married to the father at the time of childbirth? -->
+            <div class="form-group mb-4">
+              <label
+                >Was mother married to the father at the time of
+                childbirth?</label
+              >
+              <div>
+                <input
+                  type="radio"
+                  id="marriedAtBirthYes"
+                  formControlName="marriedAtBirth"
+                  value="yes"
+                />
+                <label for="marriedAtBirthYes">Yes</label>
+                <input
+                  type="radio"
+                  id="marriedAtBirthNo"
+                  formControlName="marriedAtBirth"
+                  value="no"
+                />
+                <label for="marriedAtBirthNo">No</label>
+              </div>
+            </div>
+
+            <!-- 2. Is there an order for child support for this child? -->
+            <div class="form-group mb-4">
+              <label>Is there an order for child support for this child?</label>
+              <div>
+                <input
+                  type="radio"
+                  id="childSupportOrderYes"
+                  name="childSupportOrder"
+                  formControlName="childSupportOrder"
+                  value="yes"
+                />
+                <label for="childSupportOrderYes">Yes</label>
+                <input
+                  type="radio"
+                  name="childSupportOrder"
+                  id="childSupportOrderNo"
+                  formControlName="childSupportOrder"
+                  value="no"
+                />
+                <label for="childSupportOrderNo">No</label>
+              </div>
+            </div>
+
+            <!-- 3. Does the Noncustodial parent pay support? -->
+            <div class="form-group mb-4">
+              <label>Does the Noncustodial parent pay support?</label>
+              <div>
+                <input
+                  type="radio"
+                  id="ncParentPaysSupportYes"
+                  formControlName="ncParentPaysSupport"
+                  name="ncParentPaysSupport"
+                  value="yes"
+                />
+                <label for="ncParentPaysSupportYes">Yes</label>
+                <input
+                  type="radio"
+                  id="ncParentPaysSupportNo"
+                  name="ncParentPaysSupport"
+                  formControlName="ncParentPaysSupport"
+                  value="no"
+                />
+                <label for="ncParentPaysSupportNo">No</label>
+              </div>
+            </div>
+
+            <!-- 4. To whom does the noncustodial party pay support? -->
+            <div class="form-group mb-4">
+              <label>To whom does the noncustodial party pay support?</label>
+              <div>
+                <input
+                  type="radio"
+                  id="paySupportToYou"
+                  formControlName="paySupportTo"
+                  value="toYou"
+                />
+                <label for="paySupportToYou">To You</label>
+                <input
+                  type="radio"
+                  id="paySupportToAgency"
+                  formControlName="paySupportTo"
+                  value="toAgency"
+                />
+                <label for="paySupportToAgency">To Child Support Agency</label>
+                <input
+                  type="radio"
+                  id="paySupportToOther"
+                  formControlName="paySupportTo"
+                  value="other"
+                />
+                <label for="paySupportToOther">Other</label>
+              </div>
+            </div>
+            <!-- <button type="button" (click)="removeChild(i)" class="text-red-500">Remove Child</button> -->
+          </div>
+        </div>
+        <button
+          type="button"
+          (click)="saveChildInfo()"
+          class="mt-4 bg-blue-500 text-white rounded-md p-2"
+        >
+          Save Child Info
+        </button>
+      </mat-expansion-panel>
+      <div class="mt-6">
+        <table class="min-w-full divide-y divide-gray-200 mt-6">
+          <thead class="bg-gray-50">
+            <tr>
+              <th
+                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+              >
+                First Name
+              </th>
+              <th
+                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+              >
+                Last Name
+              </th>
+              <!-- Add other headers as needed -->
+              <th
+                class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+              >
+                Actions
+              </th>
+            </tr>
+          </thead>
+          <tbody class="bg-white divide-y divide-gray-200">
+            <tr *ngFor="let savedChild of savedChildren; let i = index">
+              <td class="px-6 py-4 whitespace-nowrap">
+                {{ savedChild.childFirstName }}
+              </td>
+              <td class="px-6 py-4 whitespace-nowrap">
+                {{ savedChild.childLastName }}
+              </td>
+              <!-- Display other child info fields as needed -->
+              <td class="px-6 py-4 whitespace-nowrap">
+                <button
+                  type="button"
+                  (click)="deleteChild(i)"
+                  class="text-red-500"
+                >
+                  Delete
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </mat-accordion>
+  </form>
+</div>

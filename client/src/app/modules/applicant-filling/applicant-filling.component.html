@@ -1,0 +1,1257 @@
+<form [formGroup]="form">
+  <mat-accordion>
+    <mat-expansion-panel
+      (opened)="personalInfoPanelOpen.set(true)"
+      (closed)="personalInfoPanelOpen.set(false)"
+    >
+      <mat-expansion-panel-header class="custom-expansion-header">
+        <mat-panel-title> Personal Information </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="mx-auto p-4">
+        <div
+          formGroupName="personal_information"
+          class="grid grid-cols-1 md:grid-cols-3 gap-4"
+        >
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >First Name</label
+            >
+            <input
+              type="text"
+              formControlName="pers_in_firstname"
+              placeholder="First Name"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >Middle Name</label
+            >
+            <input
+              type="text"
+              formControlName="pers_in_middlename"
+              placeholder="Middle Name"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >Last Name</label
+            >
+            <input
+              type="text"
+              formControlName="pers_in_lastname"
+              placeholder="Last Name"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >Suffix</label
+            >
+            <input
+              type="text"
+              formControlName="pers_in_suffix"
+              placeholder="Suffix"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >Maiden Name</label
+            >
+            <input
+              type="text"
+              formControlName="pers_in_maiden_name"
+              placeholder="Maiden Name"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >Nickname</label
+            >
+            <input
+              type="text"
+              formControlName="pers_in_nickname"
+              placeholder="Nickname"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >DOB</label
+            >
+            <input
+              type="date"
+              formControlName="pers_in_dob"
+              placeholder="DOB"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >SSN/TIN</label
+            >
+            <input
+              type="text"
+              formControlName="pers_in_ssn_itin"
+              placeholder="SSN/TIN"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >Gender</label
+            >
+            <select
+              formControlName="pers_in_gender"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            >
+              <option value="">Select Gender</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Missing">Missing</option>
+              <option value="Other">Other</option>
+              <option value="Transgender">Transgender</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >Race</label
+            >
+            <select
+              formControlName="pers_in_race"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            >
+              <option value="">Select Race</option>
+              <option value="Caucasoid">Caucasoid</option>
+              <option value="Negroid">Negroid</option>
+              <option value="Mongoloid">Mongoloid</option>
+              <option value="Australoid">Australoid</option>
+              <option value="Asian">Asian</option>
+              <option value="Native Hawaian or Pacific Islander">
+                Native Hawaian or Pacific Islander
+              </option>
+              <option value="Black">Black or Africian American</option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >Relationship to Child</label
+            >
+            <select
+              formControlName="pers_in_relationship_to_child"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            >
+              <option value="">Please Select</option>
+              <option value="Aunt">Aunt</option>
+              <option value="Brother">Brother</option>
+              <option value="Cousin">Cousin</option>
+              <option value="Father">Father</option>
+              <option value="Asian">Asian</option>
+              <option value="Former Parent">Former Parent</option>
+            </select>
+          </div>
+        </div>
+
+        <h3 class="text-lg font-semibold text-muted-foreground">
+          Custodial Party Alternative Name
+        </h3>
+        <div
+          formGroupName="custodial_party_alternative_name"
+          class="grid grid-cols-1 md:grid-cols-3 gap-4"
+        >
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >First Name</label
+            >
+            <input
+              type="text"
+              formControlName="cp_firstname"
+              placeholder="First Name"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >Middle Name</label
+            >
+            <input
+              type="text"
+              formControlName="cp_middlename"
+              placeholder="Middle Name"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >Last Name</label
+            >
+            <input
+              type="text"
+              formControlName="cp_lastname"
+              placeholder="Last Name"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >Suffix</label
+            >
+            <input
+              type="text"
+              formControlName="cp_suffix"
+              placeholder="Suffix"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            />
+          </div>
+        </div>
+
+        <h3 class="text-lg font-semibold text-muted-foreground">
+          Applicant Mailing Address
+        </h3>
+        <div
+          formGroupName="applicant_mailing_address"
+          class="grid grid-cols-1 md:grid-cols-3 gap-4"
+        >
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >Source</label
+            >
+            <input
+              type="text"
+              formControlName="app_ma_source"
+              placeholder="Source"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >International Address?</label
+            >
+            <div class="flex items-center">
+              <input
+                type="radio"
+                formControlName="app_ma_international_address"
+                name="app_ma_international_address"
+                value="yes"
+                class="mr-2"
+              />
+              Yes
+              <input
+                type="radio"
+                name="app_ma_international_address"
+                formControlName="app_ma_international_address"
+                value="no"
+                class="mr-2"
+              />
+              No
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >Address Line 1</label
+            >
+            <input
+              type="text"
+              formControlName="app_ma_address_line_1"
+              placeholder="Address Line 1"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >Address Line 2</label
+            >
+            <input
+              type="text"
+              formControlName="app_ma_address_line_2"
+              placeholder="Address Line 2"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >City</label
+            >
+            <input
+              type="text"
+              formControlName="app_ma_city"
+              placeholder="City"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >State</label
+            >
+            <input
+              type="text"
+              formControlName="app_ma_state"
+              placeholder="State"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >Country</label
+            >
+            <input
+              type="text"
+              formControlName="app_ma_county"
+              placeholder="County"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >Zip Code</label
+            >
+            <input
+              type="text"
+              formControlName="app_ma_zipcode"
+              placeholder="Zip Code"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >Country</label
+            >
+            <select
+              formControlName="app_ma_country"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            >
+              <option value="United States of America">
+                United States of America
+              </option>
+            </select>
+          </div>
+        </div>
+
+        <h3 class="text-lg font-semibold text-muted-foreground">
+          Applicant Residential Address
+        </h3>
+        <div
+          formGroupName="applicant_residential_address"
+          class="grid grid-cols-1 md:grid-cols-3 gap-4"
+        >
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >Residential Address Same As Mailing Address</label
+            >
+            <input type="checkbox" class="mr-2" /> Yes
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >Source</label
+            >
+            <input
+              type="text"
+              formControlName="app_re_source"
+              placeholder="Source"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >International Address?</label
+            >
+            <div class="flex items-center">
+              <input
+                type="radio"
+                name="app_re_international_address"
+                formControlName="app_re_international_address"
+                value="yes"
+                class="mr-2"
+              />
+              Yes
+              <input
+                type="radio"
+                formControlName="app_re_international_address"
+                name="app_re_international_address"
+                value="no"
+                class="mr-2"
+              />
+              No
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >Address Line 1</label
+            >
+            <input
+              type="text"
+              formControlName="app_re_address_line_1"
+              placeholder="Address Line"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >Address Line 2</label
+            >
+            <input
+              type="text"
+              formControlName="app_re_address_line_2"
+              placeholder="Address Line 2"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >City</label
+            >
+            <input
+              type="text"
+              formControlName="app_re_city"
+              placeholder="City"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >State</label
+            >
+            <input
+              type="text"
+              formControlName="app_re_state"
+              placeholder="State"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >County</label
+            >
+            <input
+              type="text"
+              formControlName="app_re_county"
+              placeholder="county"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >Zip Code</label
+            >
+            <input
+              type="text"
+              formControlName="app_re_zipcode"
+              placeholder="Zip Code"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >Country</label
+            >
+            <select
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            >
+              <option value="United States of America">
+                United States of America
+              </option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >Home Phone</label
+            >
+            <input
+              type="text"
+              formControlName="app_re_home_phone"
+              placeholder="Home Phone"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >Business Phone</label
+            >
+            <input
+              type="text"
+              formControlName="app_re_business_phone"
+              placeholder="Business Phone"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >Cell Phone</label
+            >
+            <input
+              type="text"
+              formControlName="app_re_cell_phone"
+              placeholder="Cell Phone"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >Email</label
+            >
+            <input
+              type="email"
+              formControlName="app_re_email"
+              placeholder="Email"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            />
+          </div>
+        </div>
+
+        <h3 class="text-lg font-semibold text-muted-foreground">
+          Applicant Nearest Relative Information
+        </h3>
+        <div
+          formGroupName="nearest_relative_information"
+          class="grid grid-cols-1 md:grid-cols-3 gap-4"
+        >
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >Relation to Applicant</label
+            >
+            <input
+              type="text"
+              formControlName="ne_re_relation_to_applicant"
+              placeholder="Relation"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >First Name</label
+            >
+            <input
+              type="text"
+              formControlName="ne_re_firstname"
+              placeholder="First Name"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >Last Name</label
+            >
+            <input
+              type="text"
+              formControlName="ne_re_lastname"
+              placeholder="Last Name"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >Phone</label
+            >
+            <input
+              type="number"
+              formControlName="ne_re_phone"
+              placeholder="Phone"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            />
+          </div>
+        </div>
+
+        <h3 class="text-lg font-semibold text-muted-foreground">
+          Relative Address
+        </h3>
+        <div
+          formGroupName="relative_address"
+          class="grid grid-cols-1 md:grid-cols-3 gap-4"
+        >
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >Source</label
+            >
+            <input
+              type="text"
+              formControlName="rel_ad_source"
+              placeholder="Source"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >International Address?</label
+            >
+            <div class="flex items-center">
+              <input
+                type="radio"
+                name="rel_ad_international_address"
+                formControlName="rel_ad_international_address"
+                value="yes"
+                class="mr-2"
+              />
+              Yes
+              <input
+                type="radio"
+                formControlName="rel_ad_international_address"
+                name="rel_ad_international_address"
+                value="no"
+                class="mr-2"
+              />
+              No
+            </div>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >Address Line 1</label
+            >
+            <input
+              type="text"
+              formControlName="rel_ad_address_line_1"
+              placeholder=" Address Line 1"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >Address Line 2</label
+            >
+            <input
+              type="text"
+              formControlName="rel_ad_address_line_2"
+              placeholder="Address Line 2"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >City</label
+            >
+            <input
+              type="text"
+              formControlName="rel_ad_city"
+              placeholder="City"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >State</label
+            >
+            <input
+              type="text"
+              formControlName="rel_ad_state"
+              placeholder="State"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >County</label
+            >
+            <input
+              type="text"
+              formControlName="rel_ad_county"
+              placeholder="County"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >Zip Code</label
+            >
+            <input
+              type="text"
+              formControlName="rel_ad_zipcode"
+              placeholder="Zip Code"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            />
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >Country</label
+            >
+            <select
+              formControlName="rel_ad_country"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            >
+              <option value="">Select Country</option>
+              <option value="United States of America">
+                United States of America
+              </option>
+            </select>
+          </div>
+          <div>
+            <label class="block text-sm font-medium text-muted-foreground"
+              >Family Violence?</label
+            >
+            <div class="flex items-center">
+              <input
+                type="radio"
+                formControlName="rel_ad_family_violence"
+                name="rel_ad_family_violence"
+                value="yes"
+                class="mr-2"
+              />
+              Yes
+              <input
+                type="radio"
+                name="rel_ad_family_violence"
+                formControlName="rel_ad_family_violence"
+                value="no"
+                class="mr-2"
+              />
+              No
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <mat-accordion class="">
+    <mat-expansion-panel
+      (opened)="employmentInfo.set(true)"
+      (closed)="employmentInfo.set(false)"
+    >
+      <mat-expansion-panel-header class="custom-expansion-header">
+        <mat-panel-title> Employer Information </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div formGroupName="employer_info">
+        <label class="block text-sm font-medium text-muted-foreground"
+          >Is the Custodial Party Employed?</label
+        >
+        <div class="flex items-center gap-2">
+          <input
+            type="radio"
+            formControlName="custodial_party_employed"
+            name="custodial_party_employed"
+            value="yes"
+            class="mr-2"
+          />
+          Yes
+          <input
+            type="radio"
+            formControlName="custodial_party_employed"
+            name="custodial_party_employed"
+            value="no"
+            class="mr-2"
+          />
+          No
+          <input
+            type="radio"
+            formControlName="custodial_party_employed"
+            name="custodial_party_employed"
+            value="unknown"
+            class="mr-2"
+          />
+          Unknown
+        </div>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <mat-accordion class="">
+    <mat-expansion-panel
+      (opened)="custodialPartyInfo.set(true)"
+      (closed)="custodialPartyInfo.set(false)"
+    >
+      <mat-expansion-panel-header class="custom-expansion-header">
+        <mat-panel-title> Custodial Party Income Information </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div formArrayName="custodial_party_income_info">
+        <div
+          *ngFor="let incomeGroup of incomes.controls; let i = index"
+          [formGroupName]="i"
+          class="grid grid-cols-1 md:grid-cols-3 gap-4"
+        >
+          <div class="mb-4">
+            <label class="block text-sm font-medium text-muted-foreground"
+              >Income Type</label
+            >
+            <select
+              formControlName="incomeType"
+              class="w-full p-2 border rounded"
+            >
+              <option value="">Select Income Type</option>
+              <option value="salary">Salary</option>
+              <option value="wages">Wages</option>
+              <option value="self-employment">Self-Employment</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-sm font-medium text-muted-foreground"
+              >Income Frequency</label
+            >
+            <select
+              formControlName="incomeFrequency"
+              class="w-full p-2 border rounded"
+            >
+              <option disabled value="">Select Frequency</option>
+              <option value="weekly">Weekly</option>
+              <option value="biweekly">Bi-weekly</option>
+              <option value="monthly">Monthly</option>
+              <option value="annually">Annually</option>
+            </select>
+          </div>
+
+          <div class="mb-4">
+            <label class="block text-sm font-medium text-muted-foreground"
+              >Income Amount</label
+            >
+            <input
+              type="number"
+              formControlName="incomeAmount"
+              class="w-full p-2 border rounded"
+              placeholder="Enter amount"
+            />
+          </div>
+        </div>
+
+        <button
+          (click)="addIncomeControl()"
+          type="button"
+          class="bg-sky-800 text-white hover:bg-sky-400 hover:text-black px-4 py-2 rounded-md ease-out transform duration-300"
+        >
+          Add Income
+        </button>
+
+        <div *ngIf="incomes.length > 0" class="mt-4">
+          <h3 class="text-lg font-semibold mb-2">Income Information</h3>
+          <ul>
+            <li
+              *ngFor="let income of incomes.controls; let i = index"
+              class="mb-2"
+            >
+              {{ income.get("incomeType")?.value }} -
+              {{ income.get("incomeFrequency")?.value }} - ${{
+                income.get("incomeAmount")?.value
+              }}
+            </li>
+          </ul>
+          <h4>Total Income: ${{ totalIncome }}</h4>
+        </div>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <mat-accordion class="">
+    <mat-expansion-panel
+      (opened)="benefitInfo.set(true)"
+      (closed)="benefitInfo.set(false)"
+    >
+      <mat-expansion-panel-header class="custom-expansion-header">
+        <mat-panel-title> Benefit Information </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div
+        formGroupName="benefit_info"
+        class="grid grid-cols-1 md:grid-cols-2 gap-4"
+      >
+        <div>
+          <p>Current Temporary Cash Assistance (TCA) Recipient</p>
+          <div>
+            <input
+              type="radio"
+              id="benefits-yes"
+              formControlName="current_tca_recipient"
+              name="current_tca_recipient"
+              value="yes"
+            />
+            <label for="benefits-yes">Yes</label>
+            <input
+              type="radio"
+              id="benefits-no"
+              name="benefits"
+              formControlName="current_tca_recipient"
+              name="current_tca_recipient"
+              value="no"
+            />
+            <label for="benefits-no">No</label>
+          </div>
+        </div>
+        <div>
+          <p>Former Temporary Cash Assistance (TCA) Recipient</p>
+          <div>
+            <input
+              type="radio"
+              id="applied-yes"
+              formControlName="former_tca_recipient"
+              name="former_tca_recipient"
+              value="yes"
+            />
+            <label for="applied-yes">Yes</label>
+            <input
+              type="radio"
+              id="applied-no"
+              formControlName="former_tca_recipient"
+              name="former_tca_recipient"
+              value="no"
+            />
+            <label for="applied-no">No</label>
+          </div>
+        </div>
+        <div>
+          <p>Temporary Cash Assistance (TCA) Recipient</p>
+          <div>
+            <input
+              type="radio"
+              id="eligible-yes"
+              formControlName="temperory_cash_assist_applicant"
+              name="temperory_cash_assist_applicant"
+              value="yes"
+            />
+            <label for="eligible-yes">Yes</label>
+            <input
+              type="radio"
+              id="eligible-no"
+              formControlName="temperory_cash_assist_applicant"
+              name="temperory_cash_assist_applicant"
+              value="no"
+            />
+            <label for="eligible-no">No</label>
+          </div>
+        </div>
+        <div>
+          <p>Current Medical Assistance (MA) Recipient</p>
+          <div>
+            <input
+              type="radio"
+              id="assistance-yes"
+              formControlName="current_medical_assist_recipient"
+              name="current_medical_assist_recipient"
+              value="yes"
+            />
+            <label for="assistance-yes">Yes</label>
+            <input
+              type="radio"
+              id="assistance-no"
+              formControlName="current_medical_assist_recipient"
+              name="current_medical_assist_recipient"
+              value="no"
+            />
+            <label for="assistance-no">No</label>
+          </div>
+        </div>
+        <div>
+          <p>Former Medical Assistance (MA) Recipient</p>
+          <div>
+            <input
+              type="radio"
+              formControlName="former_medical_assist_recipient"
+              id="denied-yes"
+              name="former_medical_assist_recipient"
+              value="yes"
+            />
+            <label for="denied-yes">Yes</label>
+            <input
+              type="radio"
+              formControlName="former_medical_assist_recipient"
+              id="denied-no"
+              name="former_medical_assist_recipient"
+              value="no"
+            />
+            <label for="denied-no">No</label>
+          </div>
+        </div>
+        <div>
+          <p>Medical Assistance (MA) Recipient</p>
+          <div>
+            <input
+              type="radio"
+              id="aware-yes"
+              formControlName="medical_assist_applicant"
+              name="medical_assist_applicant"
+              value="yes"
+            />
+            <label for="aware-yes">Yes</label>
+            <input
+              type="radio"
+              id="aware-no"
+              formControlName="medical_assist_applicant"
+              name="medical_assist_applicant"
+              value="no"
+            />
+            <label for="aware-no">No</label>
+          </div>
+          <div>
+            <button
+              class="bg-sky-800 text-white hover:bg-sky-400 hover:text-black px-4 py-2 rounded-md ease-out transform duration-300"
+            >
+              Confirm
+            </button>
+          </div>
+        </div>
+        <div>
+          <h1 class="font-semibold">Applicant Final statement</h1>
+          <p>Financial statement provided</p>
+          <div>
+            <input
+              type="radio"
+              id="aware-yes"
+              formControlName="finanacial_statement_provide"
+              name="finanacial_statement_provide"
+              value="yes"
+            />
+            <label for="aware-yes">Yes</label>
+            <input
+              type="radio"
+              id="aware-no"
+              formControlName="finanacial_statement_provide"
+              name="finanacial_statement_provide"
+              value="no"
+            />
+            <label for="aware-no">No</label>
+          </div>
+        </div>
+        <div>
+          <p>Payment Status</p>
+          <select
+            formControlName="payment_status"
+            class="mt-1 block w-full border border-border rounded-md p-2"
+          >
+            <option disabled value="">Select payment status</option>
+            <option value="paid">Paid</option>
+            <option value="unpaid">Unpaid</option>
+          </select>
+        </div>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <mat-accordion class="">
+    <mat-expansion-panel
+      (opened)="custodialPartyAttornyInfo.set(true)"
+      (closed)="custodialPartyAttornyInfo.set(false)"
+    >
+      <mat-expansion-panel-header class="custom-expansion-header">
+        <mat-panel-title> Custodial Party Attorny Information </mat-panel-title>
+        <mat-panel-description> </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <div
+        formGroupName="custodial_party_attorny_info"
+        class="grid grid-cols-1 md:grid-cols-3 gap-4"
+      >
+        <div>
+          <label class="block text-sm font-medium text-muted-foreground"
+            >First Name</label
+          >
+          <input
+            type="text"
+            formControlName="cp_at_firstname"
+            placeholder="First Name"
+            class="mt-1 block w-full border border-border rounded-md p-2"
+          />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-muted-foreground"
+            >Middle Name</label
+          >
+          <input
+            type="text"
+            formControlName="cp_at_middlename"
+            placeholder="Middle Name"
+            class="mt-1 block w-full border border-border rounded-md p-2"
+          />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-muted-foreground"
+            >Last Name</label
+          >
+          <input
+            type="text"
+            formControlName="cp_at_lastname"
+            placeholder="Last Name"
+            class="mt-1 block w-full border border-border rounded-md p-2"
+          />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-muted-foreground"
+            >Phone</label
+          >
+          <input
+            type="text"
+            formControlName="cp_at_phone"
+            placeholder="Phone"
+            class="mt-1 block w-full border border-border rounded-md p-2"
+          />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-muted-foreground"
+            >Source</label
+          >
+          <input
+            type="text"
+            formControlName="cp_at_source"
+            placeholder="Source"
+            class="mt-1 block w-full border border-border rounded-md p-2"
+          />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-muted-foreground"
+            >International Address?</label
+          >
+          <div class="flex items-center">
+            <input
+              type="radio"
+              name="cp_at_international_addrss"
+              formControlName="cp_at_international_addrss"
+              value="yes"
+              class="mr-2"
+            />
+            Yes
+            <input
+              type="radio"
+              formControlName="cp_at_international_addrss"
+              name="cp_at_international_addrss"
+              value="no"
+              class="mr-2"
+            />
+            No
+          </div>
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-muted-foreground"
+            >Address Line 1</label
+          >
+          <input
+            type="text"
+            formControlName="cp_at_address_line_1"
+            placeholder=" Address Line 1"
+            class="mt-1 block w-full border border-border rounded-md p-2"
+          />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-muted-foreground"
+            >Address Line 2</label
+          >
+          <input
+            type="text"
+            formControlName="cp_at_address_line_2"
+            placeholder="Address Line 2"
+            class="mt-1 block w-full border border-border rounded-md p-2"
+          />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-muted-foreground"
+            >City</label
+          >
+          <input
+            type="text"
+            formControlName="cp_at_city"
+            placeholder="City"
+            class="mt-1 block w-full border border-border rounded-md p-2"
+          />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-muted-foreground"
+            >State</label
+          >
+          <input
+            type="text"
+            formControlName="cp_at_state"
+            placeholder="State"
+            class="mt-1 block w-full border border-border rounded-md p-2"
+          />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-muted-foreground"
+            >County</label
+          >
+          <input
+            type="text"
+            formControlName="cp_at_county"
+            placeholder="County"
+            class="mt-1 block w-full border border-border rounded-md p-2"
+          />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-muted-foreground"
+            >Zip Code</label
+          >
+          <input
+            type="text"
+            formControlName="cp_at_zipcode"
+            placeholder="Zip Code"
+            class="mt-1 block w-full border border-border rounded-md p-2"
+          />
+        </div>
+        <div>
+          <label class="block text-sm font-medium text-muted-foreground"
+            >Country</label
+          >
+          <select
+            formControlName="cp_at_country"
+            class="mt-1 block w-full border border-border rounded-md p-2"
+          >
+            <option disabled value="">Select Country</option>
+            <option value="United States of America">
+              United States of America
+            </option>
+          </select>
+        </div>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+  <mat-accordion class="">
+    <mat-expansion-panel
+      (opened)="custodialPartyAssetInfo.set(true)"
+      (closed)="custodialPartyAssetInfo.set(false)"
+    >
+      <mat-expansion-panel-header class="custom-expansion-header">
+        <mat-panel-title> Custodial Party Asset Information </mat-panel-title>
+        <mat-panel-description> </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div formArrayName="custodial_party_assets">
+        <table class="w-full border-collapse">
+          <thead>
+            <tr>
+              <th class="border border-border p-2 text-left">
+                Custodial Party Assets
+              </th>
+            </tr>
+          </thead>
+          <tbody>
+            <div>
+              <tr *ngFor="let asset of assets.controls; let i = index">
+                <td class="border border-border p-2">
+                  <div [formGroupName]="i" class="flex items-center space-x-2">
+                    <select
+                      formControlName="type"
+                      class="border border-border rounded-md p-2"
+                    >
+                      <option selected disabled value="">
+                        Select Asset Type
+                      </option>
+                      <option value="real_estate">Real Estate</option>
+                      <option value="vehicle">Vehicle</option>
+                      <option value="bank_account">Bank Account</option>
+                      <option value="investment">Investment</option>
+                      <option value="other">Other</option>
+                    </select>
+                    <input
+                      formControlName="value"
+                      type="number"
+                      placeholder="Asset Value"
+                      class="border border-border rounded-md p-2"
+                    />
+                    <button
+                      (click)="removeAssetControl(i)"
+                      class="bg-red-500 text-white hover:bg-red-600 px-2 py-1 rounded-md"
+                    >
+                      Remove
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </div>
+            <tr>
+              <td class="border border-border p-2">
+                <div class="flex justify-end">
+                  <button
+                    (click)="addAssetControl()"
+                    class="bg-sky-800 text-white hover:bg-sky-400 hover:text-black px-4 py-2 rounded-md ease-out transform duration-300"
+                  >
+                    Add Asset
+                  </button>
+                </div>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </mat-expansion-panel>
+  </mat-accordion>
+</form>

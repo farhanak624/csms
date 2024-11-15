@@ -1,0 +1,1444 @@
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+  <mat-accordion>
+    <mat-expansion-panel
+      (opened)="ncpPersonalInfo.set(true)"
+      (closed)="ncpPersonalInfo.set(false)"
+    >
+      <mat-expansion-panel-header class="custom-expansion-header">
+        <mat-panel-title> NCP Personal Information </mat-panel-title>
+        <mat-panel-description> </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div class="mx-auto p-4">
+        <div
+          formGroupName="ncp_personal_info"
+          class="grid grid-cols-1 md:grid-cols-3 gap-4"
+        >
+          <div>
+            <label
+              class="block text-sm font-medium text-muted-foreground"
+              for="ncp_pi_firstname"
+              >First Name</label
+            >
+            <input
+              id="ncp_pi_firstname"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              type="text"
+              placeholder="First Name"
+              formControlName="ncp_pi_firstname"
+            />
+          </div>
+          <div>
+            <label
+              class="block text-sm font-medium text-muted-foreground"
+              for="ncp_pi_middlename"
+              >Middle Name</label
+            >
+            <input
+              id="ncp_pi_middlename"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              type="text"
+              placeholder="Middle Name"
+              formControlName="ncp_pi_middlename"
+            />
+          </div>
+          <div>
+            <label
+              class="block text-sm font-medium text-muted-foreground"
+              for="ncp_pi_lastname"
+              >Last Name</label
+            >
+            <input
+              id="ncp_pi_lastname"
+              formControlName="ncp_pi_lastname"
+              type="text"
+              placeholder="Last Name"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            />
+          </div>
+          <div>
+            <label
+              class="block text-sm font-medium text-muted-foreground"
+              for="ncp_pi_suffix"
+              >Suffix</label
+            >
+            <input
+              id="ncp_pi_suffix"
+              placeholder="Suffix"
+              formControlName="ncp_pi_suffix"
+              type="text"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+            />
+          </div>
+          <div>
+            <label
+              class="block text-sm font-medium text-muted-foreground"
+              for="ncp_pi_maiden_name"
+              >Maiden Name</label
+            >
+            <input
+              type="text"
+              placeholder="Maiden Name"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              id="ncp_pi_maiden_name"
+              formControlName="ncp_pi_maiden_name"
+            />
+          </div>
+          <div>
+            <label
+              class="block text-sm font-medium text-muted-foreground"
+              for="ncp_pi_nickname"
+              >Nickname</label
+            >
+            <input
+              id="ncp_pi_nickname"
+              type="text"
+              placeholder="Nickname"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              formControlName="ncp_pi_nickname"
+            />
+          </div>
+          <div>
+            <label
+              class="block text-sm font-medium text-muted-foreground"
+              for="ncp_pi_aproximate_age"
+              >Approximate Age</label
+            >
+            <input
+              id="ncp_pi_aproximate_age"
+              type="text"
+              placeholder="Approximate Age"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              formControlName="ncp_pi_aproximate_age"
+            />
+          </div>
+          <div>
+            <label
+              class="block text-sm font-medium text-muted-foreground"
+              for="ncp_pi_source"
+              >Source</label
+            >
+            <select
+              formControlName="ncp_pi_source"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              name=""
+              id=""
+            >
+              <option disabled value="">Source</option>
+              <option value="source 1">Source 1</option>
+              <option value="source 2">Source 2</option>
+            </select>
+          </div>
+          <div>
+            <label
+              class="block text-sm font-medium text-muted-foreground"
+              for="ncp_pi_international_address"
+              >International Address</label
+            >
+            <input
+              id="ncp_pi_international_address"
+              type="text"
+              placeholder="International Address"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              formControlName="ncp_pi_international_address"
+            />
+          </div>
+          <div>
+            <label
+              class="block text-sm font-medium text-muted-foreground"
+              for="ncp_pi_address_line_1"
+              >Address Line 1</label
+            >
+            <input
+              id="ncp_pi_address_line_1"
+              type="text"
+              placeholder="Address Line 1"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              formControlName="ncp_pi_address_line_1"
+            />
+          </div>
+          <div>
+            <label
+              class="block text-sm font-medium text-muted-foreground"
+              for="ncp_pi_address_line_2"
+              >Address Line 2</label
+            >
+            <input
+              id="ncp_pi_address_line_2"
+              type="text"
+              placeholder="Address Line 2"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              formControlName="ncp_pi_address_line_2"
+            />
+          </div>
+          <div>
+            <label
+              class="block text-sm font-medium text-muted-foreground"
+              for="ncp_pi_city"
+              >City</label
+            >
+            <input
+              id="ncp_pi_city"
+              placeholder="City"
+              type="text"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              formControlName="ncp_pi_city"
+            />
+          </div>
+          <div>
+            <label
+              class="block text-sm font-medium text-muted-foreground"
+              for="ncp_pi_state"
+              >State</label
+            >
+            <input
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              type="text"
+              placeholder="State"
+              id="ncp_pi_state"
+              formControlName="ncp_pi_state"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_pi_county"
+              class="block text-sm font-medium text-muted-foreground"
+              >County</label
+            >
+            <input
+              id="ncp_pi_county"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              type="text"
+              placeholder="County"
+              formControlName="ncp_pi_county"
+            />
+          </div>
+          <div>
+            <label
+              class="block text-sm font-medium text-muted-foreground"
+              for="ncp_pi_zipcode"
+              >Zipcode</label
+            >
+            <input
+              id="ncp_pi_zipcode"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              type="text"
+              placeholder="Zipcode"
+              formControlName="ncp_pi_zipcode"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_pi_country"
+              class="block text-sm font-medium text-muted-foreground"
+              >Country</label
+            >
+            <input
+              id="ncp_pi_country"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              type="text"
+              placeholder="Country"
+              formControlName="ncp_pi_country"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_pi_home_phone"
+              class="block text-sm font-medium text-muted-foreground"
+              >Home Phone</label
+            >
+            <input
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              type="number"
+              placeholder="Home Phone"
+              id="ncp_pi_home_phone"
+              formControlName="ncp_pi_home_phone"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_pi_business_phone"
+              class="block text-sm font-medium text-muted-foreground"
+              >Business Phone</label
+            >
+            <input
+              id="ncp_pi_business_phone"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              type="number"
+              placeholder="Business Phone"
+              formControlName="ncp_pi_business_phone"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_pi_cell_phone"
+              class="block text-sm font-medium text-muted-foreground"
+              >Cell Phone</label
+            >
+            <input
+              id="ncp_pi_cell_phone"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              type="number"
+              placeholder="Cell Phone"
+              formControlName="ncp_pi_cell_phone"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_pi_email"
+              class="block text-sm font-medium text-muted-foreground"
+              >Email</label
+            >
+            <input
+              id="ncp_pi_email"
+              formControlName="ncp_pi_email"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              type="email"
+              placeholder="Email"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_pi_eye_color"
+              class="block text-sm font-medium text-muted-foreground"
+              >Eye Color</label
+            >
+            <input
+              id="ncp_pi_eye_color"
+              formControlName="ncp_pi_eye_color"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              type="text"
+              placeholder="Eye Color"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_pi_hair_color"
+              class="block text-sm font-medium text-muted-foreground"
+              >Hair Color</label
+            >
+            <input
+              id="ncp_pi_hair_color"
+              formControlName="ncp_pi_hair_color"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              type="text"
+              placeholder="Hair Color"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_pi_height_ft"
+              class="block text-sm font-medium text-muted-foreground"
+              >Height (ft)</label
+            >
+            <input
+              id="ncp_pi_height_ft"
+              formControlName="ncp_pi_height_ft"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              type="number"
+              placeholder="Height (ft)"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_pi_height_in"
+              class="block text-sm font-medium text-muted-foreground"
+              >Height (in)</label
+            >
+            <input
+              id="ncp_pi_height_in"
+              formControlName="ncp_pi_height_in"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              type="number"
+              placeholder="Height (in)"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_pi_identification_marks"
+              class="block text-sm font-medium text-muted-foreground"
+              >Identification Marks</label
+            >
+            <input
+              id="ncp_pi_identification_marks"
+              formControlName="ncp_pi_identification_marks"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              type="text"
+              placeholder="Identification Marks"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_pi_weight_lbs"
+              class="block text-sm font-medium text-muted-foreground"
+              >Weight (lbs)</label
+            >
+            <input
+              id="ncp_pi_weight_lbs"
+              formControlName="ncp_pi_weight_lbs"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              type="number"
+              placeholder="Weight (lbs)"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_pi__driver_license"
+              class="block text-sm font-medium text-muted-foreground"
+              >Driver's License</label
+            >
+            <input
+              id="ncp_pi__driver_license"
+              formControlName="ncp_pi__driver_license"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              type="text"
+              placeholder="Driver's License"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_pi_place_of_birth_city"
+              class="block text-sm font-medium text-muted-foreground"
+              >Place of Birth (City)</label
+            >
+            <input
+              id="ncp_pi_place_of_birth_city"
+              formControlName="ncp_pi_place_of_birth_city"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              type="text"
+              placeholder="Place of Birth (City)"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_pi_place_of_birth_state"
+              class="block text-sm font-medium text-muted-foreground"
+              >Place of Birth (State)</label
+            >
+            <input
+              id="ncp_pi_place_of_birth_state"
+              formControlName="ncp_pi_place_of_birth_state"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              type="text"
+              placeholder="Place of Birth (State)"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_pi_marital_status"
+              class="block text-sm font-medium text-muted-foreground"
+              >Marital Status</label
+            >
+            <select
+              name=""
+              id="ncp_pi_marital_status"
+              formControlName="ncp_pi_marital_status"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              id=""
+            >
+              <option disbled value="Married">Marital Status</option>
+              <option value="married">Married</option>
+              <option value="unmarried">UnMarried</option>
+            </select>
+          </div>
+          <div>
+            <label
+              for="ncp_pi_citizen_status"
+              class="block text-sm font-medium text-muted-foreground"
+              >Citizen Status</label
+            >
+            <input
+              id="ncp_pi_citizen_status"
+              formControlName="ncp_pi_citizen_status"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              type="text"
+              placeholder="Citizen Status"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_pi_dob"
+              class="block text-sm font-medium text-muted-foreground"
+              >Date of Birth</label
+            >
+            <input
+              id="ncp_pi_dob"
+              formControlName="ncp_pi_dob"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              type="date"
+              placeholder="Date of Birth"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_pi_ssn_itin"
+              class="block text-sm font-medium text-muted-foreground"
+              >SSN/ITIN</label
+            >
+            <input
+              id="ncp_pi_ssn_itin"
+              formControlName="ncp_pi_ssn_itin"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              type="text"
+              placeholder="SSN/ITIN"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_pi_gender"
+              class="block text-sm font-medium text-muted-foreground"
+              >Gender</label
+            >
+            <select
+              name=""
+              id="ncp_pi_gender"
+              formControlName="ncp_pi_gender"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              id=""
+            >
+              <option disbled value="Married">Marital Status</option>
+              <option value="married">Married</option>
+              <option value="unmarried">UnMarried</option>
+            </select>
+          </div>
+          <div>
+            <label
+              for="ncp_pi_race"
+              class="block text-sm font-medium text-muted-foreground"
+              >Race</label
+            >
+            <input
+              id="ncp_pi_race"
+              formControlName="ncp_pi_race"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              type="text"
+              placeholder="Race"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_pi_relationship_to_child"
+              class="block text-sm font-medium text-muted-foreground"
+              >Relationship to Child</label
+            >
+            <select
+              name=""
+              id="ncp_pi_relationship_to_child"
+              formControlName="ncp_pi_relationship_to_child"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              id=""
+            >
+              <option disbled value="Father">Father</option>
+              <option value="mother">Mother</option>
+              <option value="aunt">Aunt</option>
+            </select>
+          </div>
+          <div>
+            <label
+              for="ncp_pi_member_of_union_local"
+              class="block text-sm font-medium text-muted-foreground"
+              >Member of Union Local</label
+            >
+            <div class="mt-1">
+              <label class="inline-flex items-center mr-4">
+                <input
+                  type="radio"
+                  formControlName="ncp_pi_member_of_union_local"
+                  value="yes"
+                  class="form-checkbox"
+                />
+                <span class="ml-2">Yes</span>
+              </label>
+              <label class="inline-flex items-center">
+                <input
+                  type="radio"
+                  formControlName="ncp_pi_member_of_union_local"
+                  value="no"
+                  class="form-checkbox"
+                />
+                <span class="ml-2">No</span>
+              </label>
+            </div>
+          </div>
+        </div>
+      </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel
+      (opened)="ncpAlternativeInfo.set(true)"
+      (closed)="ncpAlternativeInfo.set(false)"
+    >
+      <mat-expansion-panel-header class="custom-expansion-header">
+        <mat-panel-title> NCP Alternative Information </mat-panel-title>
+        <mat-panel-description> </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div class="mx-auto p-4">
+        <div
+          formGroupName="ncp_alternative_name"
+          class="grid grid-cols-1 md:grid-cols-3 gap-4"
+        >
+          <div>
+            <label
+              for="ncp_an_firstname"
+              class="block text-sm font-medium text-muted-foreground"
+              >First Name</label
+            >
+            <input
+              id="ncp_an_firstname"
+              formControlName="ncp_an_firstname"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              type="text"
+              placeholder=" First Name"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_an_middlename"
+              class="block text-sm font-medium text-muted-foreground"
+              >Middle Name</label
+            >
+            <input
+              id="ncp_an_middlename"
+              formControlName="ncp_an_middlename"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              type="text"
+              placeholder="Middle Name"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_an_lastname"
+              class="block text-sm font-medium text-muted-foreground"
+              >Last Name</label
+            >
+            <input
+              id="ncp_an_lastname"
+              formControlName="ncp_an_lastname"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              type="text"
+              placeholder="Last Name"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_an_suffix"
+              class="block text-sm font-medium text-muted-foreground"
+              >Suffix</label
+            >
+            <input
+              id="ncp_an_suffix"
+              formControlName="ncp_an_suffix"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              type="text"
+              placeholder="Suffix"
+            />
+          </div>
+        </div>
+      </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel
+      (opened)="ncpMilitaryInfo.set(true)"
+      (closed)="ncpMilitaryInfo.set(false)"
+    >
+      <mat-expansion-panel-header class="custom-expansion-header">
+        <mat-panel-title> NCP Military Information </mat-panel-title>
+        <mat-panel-description> </mat-panel-description>
+      </mat-expansion-panel-header>
+
+      <div formGroupName="ncp_militaryInfo" class="mt-4">
+        <label
+          for="ncp_military_served_status"
+          class="block text-sm font-medium text-muted-foreground mb-2"
+          >Has the Noncustodial Party ever served in military</label
+        >
+        <div class="flex items-center space-x-4">
+          <label class="inline-flex items-center">
+            <input
+              type="radio"
+              formControlName="ncp_military_served_status"
+              value="yes"
+              class="form-radio h-5 w-5 text-primary"
+            />
+            <span class="ml-2 text-sm">Yes</span>
+          </label>
+          <label class="inline-flex items-center">
+            <input
+              type="radio"
+              formControlName="ncp_military_served_status"
+              value="no"
+              class="form-radio h-5 w-5 text-primary"
+            />
+            <span class="ml-2 text-sm">No</span>
+          </label>
+        </div>
+      </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel
+      (opened)="ncpIncarcerationInfo.set(true)"
+      (closed)="ncpIncarcerationInfo.set(false)"
+    >
+      <mat-expansion-panel-header class="custom-expansion-header">
+        <mat-panel-title> NCP Incarceration Information </mat-panel-title>
+        <mat-panel-description> </mat-panel-description>
+      </mat-expansion-panel-header>
+      <div formGroupName="ncp_incarcerationInfo" class="mt-4">
+        <label
+          for="ncp_jail_status"
+          class="block text-sm font-medium text-muted-foreground mb-2"
+          >Has the Noncustodial Party ever been in Jail?</label
+        >
+        <div class="flex items-center space-x-4">
+          <label class="inline-flex items-center">
+            <input
+              type="radio"
+              formControlName="ncp_jail_status"
+              value="yes"
+              class="form-radio h-5 w-5 text-primary"
+            />
+            <span class="ml-2 text-sm">Yes</span>
+          </label>
+          <label class="inline-flex items-center">
+            <input
+              type="radio"
+              formControlName="ncp_jail_status"
+              value="no"
+              class="form-radio h-5 w-5 text-primary"
+            />
+            <span class="ml-2 text-sm">No</span>
+          </label>
+        </div>
+      </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel
+      (opened)="ncpNearestRelationInfo.set(true)"
+      (closed)="ncpNearestRelationInfo.set(false)"
+    >
+      <mat-expansion-panel-header class="custom-expansion-header">
+        <mat-panel-title>
+          NCP Nearest Relationship Information
+        </mat-panel-title>
+        <mat-panel-description> </mat-panel-description>
+      </mat-expansion-panel-header>
+      <!-- NCP Asset Information fields go here -->
+      <div formGroupName="ncp_nearest_relationship_info">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div>
+            <label
+              for="ncp_nr_relation_to_ncp"
+              class="block text-sm font-medium text-muted-foreground mb-2"
+              >Relation to NCP</label
+            >
+            <select
+              name=""
+              id="ncp_nr_relation_to_ncp"
+              formControlName="ncp_nr_relation_to_ncp"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              id=""
+            >
+              <option disbled value="Brother">Brother</option>
+              <option value="mother">Mother</option>
+              <option value="father">Father</option>
+            </select>
+          </div>
+          <div>
+            <label
+              for="ncp_nr_firstname"
+              class="block text-sm font-medium text-muted-foreground mb-2"
+              >First Name</label
+            >
+            <input
+              id="ncp_nr_firstname"
+              formControlName="ncp_nr_firstname"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              placeholder="First name"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_nr_middlename"
+              class="block text-sm font-medium text-muted-foreground mb-2"
+              >Middle Name</label
+            >
+            <input
+              id="ncp_nr_middlename"
+              formControlName="ncp_nr_middlename"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              placeholder="Middle name"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_nr_lastname"
+              class="block text-sm font-medium text-muted-foreground mb-2"
+              >Last Name</label
+            >
+            <input
+              id="ncp_nr_lastname"
+              formControlName="ncp_nr_lastname"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              placeholder="Last name"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_nr_phone"
+              class="block text-sm font-medium text-muted-foreground mb-2"
+              >Phone</label
+            >
+            <input
+              id="ncp_nr_phone"
+              formControlName="ncp_nr_phone"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              placeholder="Phone"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_nr_source"
+              class="block text-sm font-medium text-muted-foreground mb-2"
+              >Source</label
+            >
+            <select
+              name=""
+              id="ncp_nr_source"
+              formControlName="ncp_nr_source"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              id=""
+            >
+              <option disbled value="Source">Source 1</option>
+              <option value="source2">Source 2</option>
+              <option value="source3">Source 2</option>
+            </select>
+          </div>
+          <div>
+            <label
+              for="ncp_nr_international_addrss"
+              class="block text-sm font-medium text-muted-foreground mb-2"
+              >International Address</label
+            >
+            <div class="mt-1">
+              <label class="inline-flex items-center mr-4">
+                <input
+                  type="radio"
+                  formControlName="ncp_nr_international_addrss"
+                  value="yes"
+                  class="form-radio"
+                />
+                <span class="ml-2">Yes</span>
+              </label>
+              <label class="inline-flex items-center">
+                <input
+                  type="radio"
+                  formControlName="ncp_nr_international_addrss"
+                  value="no"
+                  class="form-radio"
+                />
+                <span class="ml-2">No</span>
+              </label>
+            </div>
+          </div>
+          <div>
+            <label
+              for="ncp_nr_address_line_1"
+              class="block text-sm font-medium text-muted-foreground mb-2"
+              >Address Line 1</label
+            >
+            <input
+              id="ncp_nr_address_line_1"
+              formControlName="ncp_nr_address_line_1"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              placeholder="Address Line 1"
+            />
+          </div>
+          <div>
+            <label for="ncp_nr_address_line_2">Address Line 2</label>
+            <input
+              id="ncp_nr_address_line_2"
+              formControlName="ncp_nr_address_line_2"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              placeholder="Address Line 2"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_nr_city"
+              class="block text-sm font-medium text-muted-foreground mb-2"
+              >City</label
+            >
+            <input
+              id="ncp_nr_city"
+              formControlName="ncp_nr_city"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              placeholder="City"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_nr_state"
+              class="block text-sm font-medium text-muted-foreground mb-2"
+              >State</label
+            >
+            <input
+              id="ncp_nr_state"
+              formControlName="ncp_nr_state"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              placeholder="State"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_nr_county"
+              class="block text-sm font-medium text-muted-foreground mb-2"
+              >County</label
+            >
+            <input
+              id="ncp_nr_county"
+              formControlName="ncp_nr_county"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              placeholder="County"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_nr_zipcode"
+              class="block text-sm font-medium text-muted-foreground mb-2"
+              >Zipcode</label
+            >
+            <input
+              id="ncp_nr_zipcode"
+              formControlName="ncp_nr_zipcode"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              placeholder="Zipcode"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_nr_country"
+              class="block text-sm font-medium text-muted-foreground mb-2"
+              >Country</label
+            >
+            <input
+              id="ncp_nr_country"
+              formControlName="ncp_nr_country"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              placeholder="Country"
+            />
+          </div>
+        </div>
+      </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel
+      (opened)="ncpMotherInfo.set(true)"
+      (closed)="ncpMotherInfo.set(false)"
+    >
+      <mat-expansion-panel-header class="custom-expansion-header">
+        <mat-panel-title> NCP Mother Information </mat-panel-title>
+        <mat-panel-description> </mat-panel-description>
+      </mat-expansion-panel-header>
+      <!-- NCP Debt Information fields go here -->
+      <div formGroupName="ncp_mother_info">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div>
+            <label
+              for="ncp_mother_firstname"
+              class="block text-sm font-medium text-muted-foreground mb-2"
+              >First Name</label
+            >
+            <input
+              id="ncp_mother_firstname"
+              formControlName="ncp_mother_firstname"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              placeholder="First Name"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_mother_middlename"
+              class="block text-sm font-medium text-muted-foreground mb-2"
+              >Middle Name</label
+            >
+            <input
+              id="ncp_mother_middlename"
+              formControlName="ncp_mother_middlename"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              placeholder="Middle Name"
+            />
+          </div>
+
+          <div>
+            <label
+              for="ncp_mother_lastname"
+              class="block text-sm font-medium text-muted-foreground mb-2"
+              >Last Name</label
+            >
+            <input
+              id="ncp_mother_lastname"
+              formControlName="ncp_mother_lastname"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              placeholder="Last Name"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_mother_source"
+              class="block text-sm font-medium text-muted-foreground mb-2"
+              >Source</label
+            >
+            <select
+              name=""
+              id="ncp_mother_source"
+              formControlName="ncp_mother_source"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              id=""
+            >
+              <option disbled value="">Source</option>
+              <option value="Source1">Source1</option>
+              <option value="Source2">Source2</option>
+            </select>
+          </div>
+          <div>
+            <label for="ncp_mother_international_address"
+              >International Address</label
+            >
+            <div class="mt-1">
+              <label class="inline-flex items-center mr-4">
+                <input
+                  type="radio"
+                  formControlName="ncp_mother_international_address"
+                  value="yes"
+                  class="form-radio"
+                />
+                <span class="ml-2">Yes</span>
+              </label>
+              <label class="inline-flex items-center">
+                <input
+                  type="radio"
+                  formControlName="ncp_mother_international_address"
+                  value="no"
+                  class="form-radio"
+                />
+                <span class="ml-2">No</span>
+              </label>
+            </div>
+          </div>
+          <div>
+            <label
+              for="ncp_mother_address_line_1"
+              class="block text-sm font-medium text-muted-foreground mb-2"
+              >Address Line 1</label
+            >
+            <input
+              id="ncp_mother_address_line_1"
+              formControlName="ncp_mother_address_line_1"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              placeholder="Address Line 1"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_mother_address_line_2"
+              class="block text-sm font-medium text-muted-foreground mb-2"
+              >Address Line 2</label
+            >
+            <input
+              id="ncp_mother_address_line_2"
+              formControlName="ncp_mother_address_line_2"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              placeholder="Address Line 2"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_mother_city"
+              class="block text-sm font-medium text-muted-foreground mb-2"
+              >City</label
+            >
+            <input
+              id="ncp_mother_city"
+              formControlName="ncp_mother_city"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              placeholder="City"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_mother_state"
+              class="block text-sm font-medium text-muted-foreground mb-2"
+              >State</label
+            >
+            <input
+              id="ncp_mother_state"
+              formControlName="ncp_mother_state"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              placeholder="State"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_mother_county"
+              class="block text-sm font-medium text-muted-foreground mb-2"
+              >County</label
+            >
+            <input
+              id="ncp_mother_county"
+              formControlName="ncp_mother_county"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              placeholder="County"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_mother_zipcode"
+              class="block text-sm font-medium text-muted-foreground mb-2"
+              >Zipcode</label
+            >
+            <input
+              id="ncp_mother_zipcode"
+              formControlName="ncp_mother_zipcode"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              placeholder="Zipcode"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_mother_country"
+              class="block text-sm font-medium text-muted-foreground mb-2"
+              >Country</label
+            >
+            <input
+              id="ncp_mother_country"
+              formControlName="ncp_mother_country"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              placeholder="Country"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_mother_phone"
+              class="block text-sm font-medium text-muted-foreground mb-2"
+              >Phone</label
+            >
+            <input
+              id="ncp_mother_phone"
+              formControlName="ncp_mother_phone"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              placeholder="Phone"
+            />
+          </div>
+        </div>
+      </div>
+    </mat-expansion-panel>
+    <mat-expansion-panel
+      (opened)="ncpFatherInfo.set(true)"
+      (closed)="ncpFatherInfo.set(false)"
+    >
+      <mat-expansion-panel-header class="custom-expansion-header">
+        <mat-panel-title> NCP Father Information </mat-panel-title>
+        <mat-panel-description> </mat-panel-description>
+      </mat-expansion-panel-header>
+      <!-- NCP Legal Information fields go here -->
+      <div formGroupName="ncp_father_info">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-4">
+          <div>
+            <label
+              for="ncp_father_firstname"
+              class="block text-sm font-medium text-muted-foreground mb-2"
+              >First Name</label
+            >
+            <input
+              id="ncp_father_firstname"
+              formControlName="ncp_father_firstname"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              placeholder="First Name"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_father_middlename"
+              class="block text-sm font-medium text-muted-foreground mb-2"
+              >Middle Name</label
+            >
+            <input
+              id="ncp_father_middlename"
+              formControlName="ncp_father_middlename"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              placeholder="Middle Name"
+            />
+          </div>
+
+          <div>
+            <label
+              for="ncp_father_lastname"
+              class="block text-sm font-medium text-muted-foreground mb-2"
+              >Last Name</label
+            >
+            <input
+              id="ncp_father_lastname"
+              formControlName="ncp_father_lastname"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              placeholder="Last Name"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_father_source"
+              class="block text-sm font-medium text-muted-foreground mb-2"
+              >Source</label
+            >
+            <select
+              name=""
+              id="ncp_father_source"
+              formControlName="ncp_father_source"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              id=""
+            >
+              <option disbled value="">Source</option>
+              <option value="Source1">Source1</option>
+              <option value="Source2">Source2</option>
+            </select>
+          </div>
+          <div>
+            <label for="ncp_father_international_address"
+              >International Address</label
+            >
+            <div class="mt-1">
+              <label class="inline-flex items-center mr-4">
+                <input
+                  type="radio"
+                  formControlName="ncp_father_international_address"
+                  value="yes"
+                  class="form-radio"
+                />
+                <span class="ml-2">Yes</span>
+              </label>
+              <label class="inline-flex items-center">
+                <input
+                  type="radio"
+                  formControlName="ncp_father_international_address"
+                  value="no"
+                  class="form-radio"
+                />
+                <span class="ml-2">No</span>
+              </label>
+            </div>
+          </div>
+          <div>
+            <label
+              for="ncp_father_address_line_1"
+              class="block text-sm font-medium text-muted-foreground mb-2"
+              >Address Line 1</label
+            >
+            <input
+              id="ncp_father_address_line_1"
+              formControlName="ncp_father_address_line_1"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              placeholder="Address Line 1"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_father_address_line_2"
+              class="block text-sm font-medium text-muted-foreground mb-2"
+              >Address Line 2</label
+            >
+            <input
+              id="ncp_father_address_line_2"
+              formControlName="ncp_father_address_line_2"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              placeholder="Address Line 2"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_father_city"
+              class="block text-sm font-medium text-muted-foreground mb-2"
+              >City</label
+            >
+            <input
+              id="ncp_father_city"
+              formControlName="ncp_father_city"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              placeholder="City"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_father_state"
+              class="block text-sm font-medium text-muted-foreground mb-2"
+              >State</label
+            >
+            <input
+              id="ncp_father_state"
+              formControlName="ncp_father_state"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              placeholder="State"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_father_county"
+              class="block text-sm font-medium text-muted-foreground mb-2"
+              >County</label
+            >
+            <input
+              id="ncp_father_county"
+              formControlName="ncp_father_county"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              placeholder="County"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_father_zipcode"
+              class="block text-sm font-medium text-muted-foreground mb-2"
+              >Zipcode</label
+            >
+            <input
+              id="ncp_father_zipcode"
+              formControlName="ncp_father_zipcode"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              placeholder="Zipcode"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_father_country"
+              class="block text-sm font-medium text-muted-foreground mb-2"
+              >Country</label
+            >
+            <input
+              id="ncp_father_country"
+              formControlName="ncp_father_country"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              placeholder="Country"
+            />
+          </div>
+          <div>
+            <label
+              for="ncp_father_phone"
+              class="block text-sm font-medium text-muted-foreground mb-2"
+              >Phone</label
+            >
+            <input
+              id="ncp_father_phone"
+              formControlName="ncp_father_phone"
+              class="mt-1 block w-full border border-border rounded-md p-2"
+              placeholder="Phone"
+            />
+          </div>
+        </div>
+      </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel
+      (opened)="ncpFatherInfo.set(true)"
+      (closed)="ncpFatherInfo.set(false)"
+    >
+      <mat-expansion-panel-header class="custom-expansion-header">
+        <mat-panel-title> NCP Father Information </mat-panel-title>
+        <mat-panel-description> </mat-panel-description>
+      </mat-expansion-panel-header>
+      <!-- NCP Health Information fields go here -->
+    </mat-expansion-panel>
+
+    <mat-expansion-panel
+      (opened)="ncpEmployerInfo.set(true)"
+      (closed)="ncpEmployerInfo.set(false)"
+    >
+      <mat-expansion-panel-header class="custom-expansion-header">
+        <mat-panel-title> NCP Employer Information </mat-panel-title>
+        <mat-panel-description> </mat-panel-description>
+      </mat-expansion-panel-header>
+      <!-- NCP Education Information fields go here -->
+      <div formGroupName="ncp_employer_info">
+        <div>
+          <label
+            for="ncp_employed"
+            class="block text-sm font-medium text-muted-foreground mb-2"
+            >Employed</label
+          >
+          <div class="mt-1">
+            <label class="inline-flex items-center mr-4">
+              <input
+                type="radio"
+                formControlName="ncp_employed"
+                value="yes"
+                class="form-radio"
+              />
+              <span class="ml-2">Yes</span>
+            </label>
+            <label class="inline-flex items-center">
+              <input
+                type="radio"
+                formControlName="ncp_employed"
+                value="no"
+                class="form-radio"
+              />
+              <span class="ml-2">No</span>
+            </label>
+          </div>
+        </div>
+      </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel
+      (opened)="ncpIncomeExpenseInfo.set(true)"
+      (closed)="ncpIncomeExpenseInfo.set(false)"
+    >
+      <mat-expansion-panel-header class="custom-expansion-header">
+        <mat-panel-title> NCP Income & Expense Information </mat-panel-title>
+        <mat-panel-description> </mat-panel-description>
+      </mat-expansion-panel-header>
+      <!-- NCP Military Information fields go here -->
+      <div formGroupName="ncp_income_expense_info">
+        <div class="">
+          <label for="ncp_property_buisness_permit_license"
+            >Property Business Permit License</label
+          >
+          <input
+            id="ncp_property_buisness_permit_license"
+            formControlName="ncp_property_buisness_permit_license"
+          />
+
+          <label for="ncp_type">Type</label>
+          <input id="ncp_type" formControlName="ncp_type" />
+
+          <label for="ncp_other_child_support_case"
+            >Other Child Support Case</label
+          >
+          <input
+            id="ncp_other_child_support_case"
+            formControlName="ncp_other_child_support_case"
+          />
+
+          <label for="ncp_state">State</label>
+          <input id="ncp_state" formControlName="ncp_state" />
+        </div>
+      </div>
+    </mat-expansion-panel>
+
+    <mat-expansion-panel
+      (opened)="ncpAttornyInfo.set(true)"
+      (closed)="ncpAttornyInfo.set(false)"
+    >
+      <mat-expansion-panel-header class="custom-expansion-header">
+        <mat-panel-title> NCP Attorny Information </mat-panel-title>
+        <mat-panel-description> </mat-panel-description>
+      </mat-expansion-panel-header>
+      <!-- NCP Additional Information fields go here -->
+    </mat-expansion-panel>
+    <mat-expansion-panel
+      (opened)="ncpAssetInfo.set(true)"
+      (closed)="ncpAssetInfo.set(false)"
+    >
+      <mat-expansion-panel-header class="custom-expansion-header">
+        <mat-panel-title> NCP Asset Information </mat-panel-title>
+        <mat-panel-description> </mat-panel-description>
+      </mat-expansion-panel-header>
+      <!-- NCP Additional Information fields go here -->
+    </mat-expansion-panel>
+  </mat-accordion>
+</form>

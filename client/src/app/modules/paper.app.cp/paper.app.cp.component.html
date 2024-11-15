@@ -1,0 +1,149 @@
+<div class="bg-gray-100 py-2 px-4 text-center flex justify-end rounded-lg p-5">
+  <span class="text-lg font-semibold text-gray-700"
+    >Application Number: {{ applicationNumber }}</span
+  >
+</div>
+<div class="p-3 scrollbar-hides">
+  <form [formGroup]="applicantForm" (ngSubmit)="onSubmit()">
+    <mat-horizontal-stepper [(selectedIndex)]="currentStep" #stepper linear>
+      <mat-step [stepControl]="personalInformationForm">
+        <ng-template matStepLabel>Applicant Filling</ng-template>
+
+        <app-applicant-filling
+          [form]="personalInformationForm"
+          (formDataChange)="updateFormData('personalInformation', $event)"
+        >
+          ></app-applicant-filling
+        >
+        <div class="flex justify-end p-4">
+          <button class="text-sky-800 font-semibold" mat-button matStepperNext>
+            Next &rarr;
+          </button>
+        </div>
+      </mat-step>
+      <mat-step>
+        <ng-template matStepLabel>NCP Info</ng-template>
+        <!-- NCP Info Form Fields Here -->
+        <app-ncp-info-step-2
+          [formGroup]="ncpInfoForm"
+          (formDataChange)="updateFormData('ncpInfo', $event)"
+          >></app-ncp-info-step-2
+        >
+        <div class="flex justify-between p-4">
+          <button
+            class="text-sky-800 font-semibold"
+            mat-button
+            matStepperPrevious
+            (click)="goToPreviousStep()"
+          >
+            &larr; Back
+          </button>
+          <button class="text-sky-800 font-semibold" mat-button matStepperNext>
+            Next &rarr;
+          </button>
+        </div>
+      </mat-step>
+      <mat-step [stepControl]="supportForm">
+        <form [formGroup]="supportForm">
+          <ng-template matStepLabel>Support</ng-template>
+          <!-- NCP Info Form Fields Here -->
+          <app-support-step-3 
+          [formGroup]="supportForm"
+          (formDataChange)="updateFormData('support', $event)"
+          ></app-support-step-3>
+          <div class="flex justify-between p-4">
+            <button
+              class="text-sky-800 font-semibold"
+              mat-button
+              matStepperPrevious
+            >
+              &larr; Back
+            </button>
+            <button
+              class="text-sky-800 font-semibold"
+              mat-button
+              matStepperNext
+            >
+              Next &rarr;
+            </button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="insuranceForm">
+        <form [formGroup]="insuranceForm">
+          <ng-template matStepLabel>Insurance</ng-template>
+          <!-- NCP Info Form Fields Here -->
+          <app-insurance-step-4
+          [formGroup]="insuranceForm"
+          (formDataChange)="updateFormData('insurance', $event)"
+          ></app-insurance-step-4>
+          <div class="flex justify-between p-4">
+            <button
+              class="text-sky-800 font-semibold"
+              mat-button
+              matStepperPrevious
+            >
+              &larr; Back
+            </button>
+            <button
+              class="text-sky-800 font-semibold"
+              mat-button
+              matStepperNext
+            >
+              Next &rarr;
+            </button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="fileUpload">
+        <form [formGroup]="fileUpload">
+          <ng-template matStepLabel>File Upload</ng-template>
+          <!-- NCP Info Form Fields Here -->
+          <app-file-upload-step-5
+            [formGroup]="fileUpload"
+            (formDataChange)="updateFormData('fileUpload', $event)"
+          ></app-file-upload-step-5>
+          <div class="flex justify-between p-4">
+            <button
+              class="text-sky-800 font-semibold"
+              mat-button
+              matStepperPrevious
+            >
+              &larr; Back
+            </button>
+            <button
+              class="text-sky-800 font-semibold"
+              mat-button
+              matStepperNext
+            >
+              Next &rarr;
+            </button>
+          </div>
+        </form>
+      </mat-step>
+      <mat-step [stepControl]="success">
+        <form [formGroup]="success">
+          <ng-template matStepLabel>Success</ng-template>
+          <!-- NCP Info Form Fields Here -->
+          <app-success-step-6></app-success-step-6>
+          <div class="flex justify-between p-4">
+            <!-- <button
+              class="text-sky-800 font-semibold"
+              mat-button
+              matStepperPrevious
+            >
+              &larr; Back
+            </button>
+            <button
+              class="text-sky-800 font-semibold"
+              mat-button
+              matStepperNext
+            >
+              Next &rarr;
+            </button> -->
+          </div>
+        </form>
+      </mat-step>
+    </mat-horizontal-stepper>
+  </form>
+</div>

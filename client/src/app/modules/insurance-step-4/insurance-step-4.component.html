@@ -1,0 +1,141 @@
+<form
+  (ngSubmit)="addInsurance()"
+  class="mx-auto mt-8 p-6 bg-white rounded-lg shadow-md"
+>
+  <h2 class="text-2xl font-bold mb-6 text-gray-800">Add Insurance</h2>
+
+  <div class="mb-4">
+    <label
+      for="insuranceType"
+      class="block text-gray-700 text-sm font-bold mb-2"
+      >Insurance Type</label
+    >
+    <input
+      type="text"
+      id="insuranceType"
+      name="insuranceType"
+      [(ngModel)]="insuranceType"
+      required
+      class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+    />
+  </div>
+
+  <div class="mb-4">
+    <label for="policyNumber" class="block text-gray-700 text-sm font-bold mb-2"
+      >Policy Number</label
+    >
+    <input
+      type="text"
+      id="policyNumber"
+      name="policyNumber"
+      [(ngModel)]="policyNumber"
+      required
+      class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+    />
+  </div>
+
+  <div class="mb-4">
+    <label for="provider" class="block text-gray-700 text-sm font-bold mb-2"
+      >Provider</label
+    >
+    <input
+      type="text"
+      id="provider"
+      name="provider"
+      [(ngModel)]="provider"
+      required
+      class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+    />
+  </div>
+
+  <div class="mb-4">
+    <label
+      for="coverageAmount"
+      class="block text-gray-700 text-sm font-bold mb-2"
+      >Coverage Amount</label
+    >
+    <input
+      type="number"
+      id="coverageAmount"
+      name="coverageAmount"
+      [(ngModel)]="coverageAmount"
+      required
+      class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+    />
+  </div>
+
+  <div class="mb-4">
+    <label for="startDate" class="block text-gray-700 text-sm font-bold mb-2"
+      >Start Date</label
+    >
+    <input
+      type="date"
+      id="startDate"
+      name="startDate"
+      [(ngModel)]="startDate"
+      required
+      class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+    />
+  </div>
+
+  <div class="mb-6">
+    <label for="endDate" class="block text-gray-700 text-sm font-bold mb-2"
+      >End Date</label
+    >
+    <input
+      type="date"
+      id="endDate"
+      name="endDate"
+      [(ngModel)]="endDate"
+      required
+      class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
+    />
+  </div>
+
+  <button
+    type="submit"
+    class="w-full bg-blue-500 text-white font-bold py-2 px-4 rounded-lg hover:bg-blue-600 transition duration-300"
+  >
+    Add Insurance
+  </button>
+</form>
+
+<div class="mt-8">
+  <h2 class="text-xl font-semibold mb-4 text-gray-800">Insurance List</h2>
+  <div class="overflow-x-auto">
+    <table class="min-w-full bg-white">
+      <thead class="bg-gray-100">
+        <tr>
+          <th class="py-2 px-4 text-left">Type</th>
+          <th class="py-2 px-4 text-left">Policy Number</th>
+          <th class="py-2 px-4 text-left">Provider</th>
+          <th class="py-2 px-4 text-left">Coverage Amount</th>
+          <th class="py-2 px-4 text-left">Start Date</th>
+          <th class="py-2 px-4 text-left">End Date</th>
+          <th class="py-2 px-4 text-left">Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let insurance of insurances; let i = index"
+          class="border-b"
+        >
+          <td class="py-2 px-4">{{ insurance.insuranceType }}</td>
+          <td class="py-2 px-4">{{ insurance.policyNumber }}</td>
+          <td class="py-2 px-4">{{ insurance.provider }}</td>
+          <td class="py-2 px-4">{{ insurance.coverageAmount | currency }}</td>
+          <td class="py-2 px-4">{{ insurance.startDate | date }}</td>
+          <td class="py-2 px-4">{{ insurance.endDate | date }}</td>
+          <td class="py-2 px-4">
+            <button
+              (click)="removeInsurance(i)"
+              class="bg-red-500 hover:bg-red-600 text-white font-bold py-1 px-2 rounded text-xs"
+            >
+              Remove
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

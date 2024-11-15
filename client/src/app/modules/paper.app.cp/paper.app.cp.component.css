@@ -1,0 +1,20 @@
+.custom-expansion-header {
+    background-color: #b9bac3; /* Change this to your desired color */
+    color: white; /* Change this to your desired text color */
+    /* border-radius: 0px; */
+  }
+  
+  .custom-expansion-header.mat-expanded {
+    background-color: #a0a1a7; /* Different color when expanded */
+    color: white;
+    border-radius: 0px;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+  
+  /* Hide scrollbar for IE, Edge and Firefox */
+  .scrollbar-hide { 
+     -ms-overflow-style: none;  
+     scrollbar-width: none;  
+  }
